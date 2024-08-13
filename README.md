@@ -6,6 +6,8 @@ This project involves Automatic Number Plate Recognition (ANPR) with the help of
 chmod +x setup.sh
 ./setup.sh
 ```
+### License plate isolation and recognition
+![img](https://i.imgur.com/y6yFTtw_d.webp?maxwidth=360&fidelity=grand)
 
 ## Libraries and Frameworks
 * [OpenCV](https://opencv.org/) - Video feed processing
