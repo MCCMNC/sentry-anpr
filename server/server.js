@@ -42,7 +42,6 @@ app.set('views', path.join(__dirname, 'www'));
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
-//app.use(bodyParser.json());
 
 app.use(session({
     secret: 'fd17320a4c84af82203348c9cf843439e7ca5871c4ed7ff4d4935f9721068832',
@@ -52,12 +51,8 @@ app.use(session({
 
 const users = [
     { id: 1, username: 'admin', password: '$2b$10$FSraBAEbj7Pg5qSh6mO68eJSjRDW/EKAsXPOIzgzt2J/XhVK8F79y' }, //pass: "pdenterprise-lpr"
-    //{ id: 2, username: 'pameca', password: '$2b$10$uiIAhL7L8BrVHGUQqXcK6eQLfqWrbZ8I7POnmM9/16C6n4wnw5go.'} //pass: zabraih ne pomnq
 ];
 
-/*const op = {
-    root: path.join(__dirname)
-};*/
 
 app.use(express.static(path.join(__dirname, './www/assets/')));
 
