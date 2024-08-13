@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Whitelist DB</title>
+</head>
+<body>
+    <%- include('./assets/navbar.html') %>
+    <div class="first">
+        <h2>Add to Whitelist</h2>
+        <br>
+        <form class="horizontal-form" action="/insert_whitelist" method="post">
+        <label for="regnum">REGNUM</label>
+        <input type="text" id="regnum" name="regnum" required>
+        
+        <label for="owner">OWNER</label>
+        <input type="text" id="owner" name="owner" required>
+        
+        <label for="msisdn">MSISDN</label>
+        <input type="text" id="msisdn" name="msisdn">
+        <button type="submit">ADD</button>
+    </form>
+    </div>
+    <br>
+    <div id="datatable"></div>
+    <script src="scr_db.js">
+    </script>
+    <script>
+        document.getElementById("username").innerText = "<%= username %>"
+        
+        const dbname = "whitelist";
+        const tableid = "datatable";
+        fetchCreateShit('datatable', '/db/whitelist')
+    </script>
+</body>
+</html>

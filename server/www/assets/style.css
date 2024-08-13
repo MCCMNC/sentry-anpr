@@ -1,0 +1,123 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');*/
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.first{
+    margin-top: 3.4em;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    margin-bottom: 0.5em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.horizontal-form{
+    display: inline;
+    color: black;
+    font-size: 18px;
+
+}
+
+.horizontal-form label{
+    margin-right: 0.1em;
+}
+
+.horizontal-form input{
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 4px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+    margin-right: 1.5em;
+}
+
+.horizontal-form button {
+    background-color: rgb(216, 0, 0);
+    color: white;
+    padding: 3px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.navbar a,p {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+#timetable{
+    width: auto;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.delete-button {
+    float: right;
+    color:#0000001e;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: 10px;
+    margin-right: 0.7em;
+    border: none;
+    background-color: transparent;
+}
+
+tr:hover .delete-button{
+    display: inline;
+    color:red;
+}
+.container{
+    display: flex;
+}
+#frameContainer {
+
+    flex: 1;
+
+}
+#imageContainer {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+#timetable{
+    flex: 1;
+    max-width: 30%;
+    margin-right: 1em;
+
+}

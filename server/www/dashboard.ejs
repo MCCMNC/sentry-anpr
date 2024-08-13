@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dashboard | SEntry</title>
+    <style>
+        body > *:not(.navbar) {
+            margin-left: 1em;
+        }
+    </style>
+</head>
+<body>
+    <%- include('./assets/navbar.html') %>
+    <h2 class="first">ANPR Server Live Feed</h2>
+
+    <div class="container">
+        <div id="frameContainer">
+            <img id="imageContainer" src="placeholder.jpg" width="1280" alt="Socket error or ANPR service not running. Contact ATENTATORA.">
+        </div>
+        <div id="timetable">
+    
+        </div>
+    </div>
+
+    <script src="scr_db.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script>-->
+    <script src="socketio_web.js"></script>
+
+    <script>
+        tableid = "timetable"
+        fetchCreateShit("timetable", "/db/timetable");
+
+        setInterval(function() {
+            fetchCreateShit("timetable", "/db/timetable");
+        }, 2000);
+
+        document.getElementById("username").innerText = "<%= username %>"
+
+        const socket = io('http://localhost:681');
+
+        socket.on('frame', (base64Frame) => {
+
+            console.log(arrayBufferToBase64(base64Frame));
+            const base64Data = arrayBufferToBase64(base64Frame);
+            const img = document.getElementById('imageContainer');
+            img.src = 'data:image/jpeg;base64,' + base64Data;
+
+        });
+
+
+        function arrayBufferToBase64(buffer) {
+            const binary = [];
+            const bytes = new Uint8Array(buffer);
+            const len = bytes.byteLength;
+            for (let i = 0; i < len; i++) {
+                binary.push(String.fromCharCode(bytes[i]));
+            }
+            return window.btoa(binary.join(''));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="form_style.css">
+    <title>Login | Sentry</title>
+</head>
+<body>
+    <form action="/login_submit" method="POST" enctype="application/x-www-form-urlencoded">
+        <h2>Login</h2>
+        <div class="form-group username">
+            <label for="username">User</label>
+            <input type="text" id="username" name="username" value="admin">
+        </div>
+        <div class="form-group password">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter passphrase" value="pdenterprise-lpr">
+        </div>
+        <div class="form-group submit-btn">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+    <script>
+    </script>
+</body>
+</html>
